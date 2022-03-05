@@ -51,4 +51,4 @@ for i in g:
         costhetajik = dij @ dik / (rij * rik)
         ep = mw.h(rij, rik, costhetajik)
         e3 += ep
-print(f"{e2}+{e3}={e2+e3} kcal/mol")
+print(f"{(e2+e3)/len(atoms)} kcal/mol Energy of a diamond structure.")
