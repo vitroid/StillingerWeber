@@ -52,3 +52,12 @@ for i in g:
         ep = mw.h(rij, rik, costhetajik)
         e3 += ep
 print(f"{(e2+e3)/len(atoms)} kcal/mol Energy of a diamond structure.")
+
+
+# more redundant calculation but simpler
+e = 0.0
+for i in g:
+    v = rpos[g[i]] - rpos[i]
+    v -= np.floor(v + 0.5)
+    e += mw.localenergy(v @ cell)
+print(f"{(e)/len(atoms)} kcal/mol Energy of a diamond structure.")
